@@ -18,15 +18,18 @@ async def on_ready():
     print(f'Logged in as {bot.user.name}')
 
 @bot.tree.command(name="checkbots", description="check the amount of bots in the db")
-async def check_bots(ctx):
+async def check_bots(interaction: discord.Interaction):
     with open('tokens.txt', 'r') as file:
         tokens = file.read().splitlines()
     token_count = len(tokens)
-    await ctx.send(f'Currently, we have {token_count} amount of bots.')
+    await interaction.response.send_message(f'Currently, we have {token_count} amount of bots.')
 
 @bot.tree.command(name="addtoken", description="add tokens to the db")
 async def add_token(interaction: discord.Interaction, new_token: str):
-
+    with open('tokens.txt', 'r') as file:
+        tokens = [str(line.strip()) for line in file]
+    with open('owners.txt', 'r') as file:
+        owner = [int(line.strip()) for line in file]
     if not interaction.user.id in owner:
         await interaction.response.send_message('no')
         return
@@ -36,25 +39,28 @@ async def add_token(interaction: discord.Interaction, new_token: str):
         return
     
     if new_token in tokens:
-        interaction.response.send_message('This token is already in the database.')
+        await interaction.response.send_message('This token is already in the database.', ephemeral=True)
         return
 
     with open('tokens.txt', 'a') as file:
         file.write('\n' + new_token)
-    await interaction.response.send_message('Token added successfully.')
+    await interaction.response.send_message('Token added successfully.', ephemeral=True)
 
 @bot.tree.command(name="addowner", description="add owner to the db")
 async def add_owner(interaction: discord.Interaction, new_owner: discord.User):
+    with open('owners.txt', 'r') as file:
+        owner = [int(line.strip()) for line in file]
+
     if not interaction.user.id in owner:
         await interaction.response.send_message('no')
         return
-
+        
     if new_owner.id in owner:
         await interaction.response.send_message('This user is already an owner.')
         return
 
     with open('owners.txt', 'a') as file:
-        file.write('\n' + new_owner.id)
+        owner.write('\n' + str(new_owner.id))
     await interaction.response.send_message('Owner added successfully.')
 
 async def is_valid_bot_token(token):
@@ -91,6 +97,8 @@ async def get_user_avatar_url(user_id):
 
 @bot.tree.command(name="mass", description="test slash command workage")
 async def mass_message(interaction: discord.Interaction, user: discord.User, message: str, delay: int = 0):
+    with open('owners.txt', 'r') as file:
+        owner = [int(line.strip()) for line in file]
     if not interaction.user.id in owner:
         await interaction.response.send_message('no')
         return
