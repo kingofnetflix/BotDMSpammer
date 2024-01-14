@@ -95,7 +95,7 @@ async def get_user_avatar_url(user_id):
     user = await bot.fetch_user(user_id)
     return user.avatar.url
 
-@bot.tree.command(name="mass", description="test slash command workage")
+@bot.tree.command(name="mass", description="mass dm someone with all of the bots in our db")
 async def mass_message(interaction: discord.Interaction, user: discord.User, message: str, delay: int = 0):
     with open('owners.txt', 'r') as file:
         owner = [int(line.strip()) for line in file]
