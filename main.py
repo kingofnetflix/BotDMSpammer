@@ -105,11 +105,11 @@ async def mass_message(interaction: discord.Interaction, user: discord.User, mes
 
     user_avatar_url = await get_user_avatar_url(1177026955959337063)
     embed = discord.Embed(
-        title="NEXO Spam Interface",
+        title="Spam Interface",
         description=f"Attempting to spam {user.mention}",
-        color=discord.Color.red()
+        color=discord.Color.random()
     )
-    embed.set_footer(text=f'Made by KingOfNetflix (discord: derxys) and NEXO (discord: itsnexo1)', icon_url=user_avatar_url)
+    embed.set_footer(text=f'Made by KingOfNetflix (discord: derxys)', icon_url=user_avatar_url)
     await interaction.response.send_message(embed=embed)
     tokens = []
     with open('tokens.txt', 'r') as file:
