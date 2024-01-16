@@ -1,7 +1,4 @@
 # BotDMSpammer
-
-## This was meant for NEXO but he wanna play around so here's the source I made for him
-
 -------------------------------------------------------------------
 
 ## Intructions
