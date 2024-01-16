@@ -1,6 +1,6 @@
 # BotDMSpammer
 
-## This was meant for NEXO (Nabeel Kocher, itsnexo1 on discord) but he wanna play around so here's the source I made for him
+## This was meant for NEXO but he wanna play around so here's the source I made for him
 
 -------------------------------------------------------------------
 
