@@ -4,6 +4,11 @@
 
 -------------------------------------------------------------------
 
+## Intructions
+Download the zip (or git clone it if your on linux) and go to the directory on your Command Prompt or bash terminal. Then type in `pip install -r requirements.txt`. Once that is complete, put the main token you want to control all the slave bots in main.py. Once you have completed all that, you may do `py main.py`. Any issues go in the issues tab, and a PR (pull request) if you have one too :)
+
+-------------------------------------------------------------------
+
 ## Commands:
 #### /checkbots: Check the amount of tokens (OWNER ONLY i think)
 #### /addbot (token): add's bot onto the txt file (OWNER ONLY)
