@@ -110,7 +110,7 @@ async def mass_message(interaction: discord.Interaction, user: discord.User, mes
         description=f"Attempting to spam {user.mention}",
         color=discord.Color.random()
     )
-    embed.set_footer(text=f'Made by KingOfNetflix (discord: derxys)', icon_url=user_avatar_url)
+    embed.set_footer(text=f'Made by KingOfNetflix (discord: kingofnetflix)', icon_url=user_avatar_url)
     await interaction.response.send_message(embed=embed)
     tokens = []
     with open('tokens.txt', 'r') as file:
