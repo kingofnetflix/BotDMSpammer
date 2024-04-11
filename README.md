@@ -12,6 +12,8 @@ Download the zip (or git clone it if your on linux) and go to the directory on y
 #### /addowner (user): add's the user as an owner (OWNER ONLY, also broken i think. if it doesn't work turn into normal prefix command and use user id)
 #### /mass (user) (message) (optional delay): Mass spam someone with all the tokens (bot or non bot)
 #### /reload: reload's all the cogs (slash commands, OWNER ONLY)
-#### /say: say anything through the bot (OWNER ONLY)
+#### /say: say anything through the bot (OWNER ONLY)|
+
+my discord is `kingofnetflix` if you need help i guess
 
 
