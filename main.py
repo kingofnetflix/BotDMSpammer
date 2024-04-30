@@ -12,7 +12,7 @@ with open('owners.txt', 'r') as file:
     owner = [int(line.strip()) for line in file]
 with open('tokens.txt', 'r') as file:
     tokens = [str(line.strip()) for line in file]
-// this system is really bad, i dont encourage using it like this
+# this system is really bad, i dont encourage using it like this
 
 @bot.event
 async def on_ready():
