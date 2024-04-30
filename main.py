@@ -145,4 +145,4 @@ async def test(interaction: discord.Interaction, message: str):
         return
     await interaction.response.send_message(message)
 
-bot.run('MTE5NjE1MDA0NDEzMTMzNjQxMw.GxuwUf.Xm8nAjtEV42qwL9a9Z4uoRjjjtDhgKK7Cw8sjI')
+bot.run('TOKEN')
